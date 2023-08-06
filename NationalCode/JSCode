@@ -1,0 +1,12 @@
+function generateNationalCode() {
+  let numbers = []
+  let sum = 0
+  for (let i = 10; i >= 2; i--) {
+    let j = Math.floor(Math.random() * 10)
+    numbers.push(j)
+    sum += j * i
+  }
+  const m = sum % 11
+  numbers.push(m < 2 ? m : 11 - m)
+  return numbers.join('')
+}
